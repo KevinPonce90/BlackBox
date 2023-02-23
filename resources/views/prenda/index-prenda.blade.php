@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Holaaaaa</h1>
+    <h1>Prendas</h1>
+
+    @foreach ($prendas as $prenda)
+        <li> {{ $prenda->tipo }} - {{ $prenda->color }} - {{ $prenda->talla }} - {{ $prenda->costo }} </li>
+    @endforeach
+
 </body>
 </html>

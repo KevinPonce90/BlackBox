@@ -12,8 +12,8 @@ class PrendaController extends Controller
      */
     public function index()
     {
-        $prenda = Prenda::all();
-        return view('prenda.index-prenda', compact('prenda'));
+        $prendas = Prenda::all();
+        return view('prenda.index-prenda', compact('prendas'));
     }
 
     /**
@@ -22,6 +22,7 @@ class PrendaController extends Controller
     public function create()
     {
         //
+        return view('prenda.ingresa-prenda',);
     }
 
     /**
@@ -30,6 +31,13 @@ class PrendaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'tipo' => 'required|min:5|max:255',
+            'color' => 'required|min:4|max:255',
+            'talla' => 'required|integer|max:9',
+            'costo' => 'required|integer|max:9',
+        ]);
+
     }
 
     /**

@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('prenda', [PrendaController::class, 'index']);
+Route::get('ingresa', [PrendaController::class, 'create']);
+Route::post('ingresa', [PrendaController::class, 'store']);
