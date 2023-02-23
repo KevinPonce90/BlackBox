@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->string('color');
             $table->string('talla');
+            $table->integer('costo');
             $table->timestamps();
         });
     }
