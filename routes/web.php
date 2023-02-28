@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('prenda', [PrendaController::class, 'index']);
-Route::get('ingresa', [PrendaController::class, 'create']);
-Route::post('ingresa', [PrendaController::class, 'store']);
+//Route::get('prenda', [PrendaController::class, 'index']);
+//Route::get('ingresa', [PrendaController::class, 'create']);
+//Route::post('ingresa', [PrendaController::class, 'store']);
+//Route::get('/prenda-individual/{id?}', [PrendaController::class, 'show']);
+
+Route::resource('prenda', PrendaController::class);
+//Route::resource('prenda', PrendaController::class)->except(['destroy', 'index']); Crea una ruta para cada metodo y el except las evita  

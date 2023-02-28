@@ -22,7 +22,7 @@ class PrendaController extends Controller
     public function create()
     {
         //
-        return view('prenda.ingresa-prenda',);
+        return view('prenda.create-prenda',);
     }
 
     /**
@@ -45,7 +45,7 @@ class PrendaController extends Controller
         $prenda->costo = $request->costo;
         $prenda->save();
 
-        return redirect('/ingresa');
+        return redirect()->route('prenda.index');
 
     }
 
@@ -54,7 +54,7 @@ class PrendaController extends Controller
      */
     public function show(Prenda $prenda)
     {
-        //
+        return view('prenda.show-prenda', compact('prenda'));
     }
 
     /**
@@ -62,7 +62,7 @@ class PrendaController extends Controller
      */
     public function edit(Prenda $prenda)
     {
-        //
+        return view('prenda.edit-prenda', compact('prenda'));
     }
 
     /**
@@ -71,6 +71,14 @@ class PrendaController extends Controller
     public function update(Request $request, Prenda $prenda)
     {
         //
+
+        $prenda->tipo = $request->tipo;
+        $prenda->color = $request->color;
+        $prenda->talla = $request->talla;
+        $prenda->costo = $request->costo;
+        $prenda->save();
+
+        return redirect()->route('prenda.show',$prenda->id);
     }
 
     /**

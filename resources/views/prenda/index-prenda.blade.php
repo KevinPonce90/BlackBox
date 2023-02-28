@@ -9,8 +9,15 @@
 <body>
     <h1>Prendas</h1>
 
+    <a href="{{ route('prenda.create') }}">Agrega Prenda</a>
+    <br><br>
+
     @foreach ($prendas as $prenda)
-        <li> {{ $prenda->tipo }} - {{ $prenda->color }} - {{ $prenda->talla }} - {{ $prenda->costo }} </li>
+        <li>
+            {{ $prenda->tipo }} - {{ $prenda->color }} - {{ $prenda->talla }} - {{ $prenda->costo }}
+            <a href="{{ route('prenda.show', $prenda) }}"> Ver Detalles</a>
+            <a href="{{ route('prenda.edit', $prenda) }}"> Editar</a>
+        </li>
     @endforeach
 
 </body>

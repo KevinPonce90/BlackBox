@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="ingresa" method="POST">
+    <form action="/{{ route('prenda.store') }}" method="POST">
     @csrf
 
     <label for="tipo">Tipo</label><br>
