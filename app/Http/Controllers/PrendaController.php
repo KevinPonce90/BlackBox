@@ -38,6 +38,15 @@ class PrendaController extends Controller
             'costo' => 'required|integer|max:9',
         ]);
 
+        $prenda = new Prenda();
+        $prenda->tipo = $request->tipo;
+        $prenda->color = $request->color;
+        $prenda->talla = $request->talla;
+        $prenda->costo = $request->costo;
+        $prenda->save();
+
+        return redirect('/ingresa');
+
     }
 
     /**
