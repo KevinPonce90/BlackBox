@@ -11,5 +11,14 @@
 
     <li> {{ $prenda->tipo }} - {{ $prenda->color }} - {{ $prenda->talla }} - {{ $prenda->costo }} </li>
     <a href="{{ route('prenda.edit', $prenda) }}"> Editar</a>
+
+    <br>
+    <br>
+
+    <form action="{{ route('prenda.destroy', $prenda) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit"> Eliminar</button>
+    </form>
 </body>
 </html>

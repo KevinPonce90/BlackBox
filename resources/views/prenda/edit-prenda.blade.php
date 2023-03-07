@@ -11,25 +11,25 @@
     @csrf
     @method('patch')
     <label for="tipo">Tipo</label><br>
-    <input type="text" name="tipo" id="tipo" value="{{ $prenda->tipo }}">
+    <input type="text" name="tipo" id="tipo" value="{{ old('tipo') ?? $prenda->tipo }}">
     @error('tipo')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="color">Color</label><br>
-    <input type="text" name="color" id="color" value="{{ $prenda->color }}">
+    <input type="text" name="color" id="color" value="{{ old('color') ?? $prenda->color }}">
    @error('color')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="talla">Talla</label><br>
-    <input type="number" name="talla" id="talla" value="{{ $prenda->talla }}">
+    <input type="number" name="talla" id="talla" value="{{ old('talla') ?? $prenda->talla }}">
     @error('talla')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="costo">Costo</label><br>
-    <input type="number" name="costo" id="costo" value="{{ $prenda->costo }}">
+    <input type="number" name="costo" id="costo" value="{{ old('costo') ?? $prenda->costo }}">
     @error('costo')
         <h4>{{ $message }}</h4>
     @enderror

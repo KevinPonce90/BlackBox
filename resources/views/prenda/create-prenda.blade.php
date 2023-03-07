@@ -7,29 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/{{ route('prenda.store') }}" method="POST">
+    <form action="{{ route('prenda.store') }}" method="POST">
     @csrf
 
     <label for="tipo">Tipo</label><br>
-    <input type="text" name="tipo" id="tipo">
+    <input type="text" name="tipo" id="tipo" value="{{ old('tipo') }}">
     @error('tipo')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="color">Color</label><br>
-    <input type="text" name="color" id="color">
+    <input type="text" name="color" id="color" value="{{ old('color') }}">
    @error('color')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="talla">Talla</label><br>
-    <input type="number" name="talla" id="talla">
+    <input type="number" name="talla" id="talla" value="{{ old('talla') }}">
     @error('talla')
         <h4>{{ $message }}</h4>
     @enderror
     <br><br>
     <label for="costo">Costo</label><br>
-    <input type="number" name="costo" id="costo">
+    <input type="number" name="costo" id="costo" value="{{ old('costo') }}">
     @error('costo')
         <h4>{{ $message }}</h4>
     @enderror
