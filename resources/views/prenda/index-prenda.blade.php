@@ -9,6 +9,8 @@
 <body>
     <h1>Prendas</h1>
 
+    <x-lista :prenda="$prendas" />
+
     <a href="{{ route('prenda.create') }}">Agrega Prenda</a>
     <br><br>
 
