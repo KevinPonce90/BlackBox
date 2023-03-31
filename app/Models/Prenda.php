@@ -10,4 +10,6 @@ class Prenda extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $fillable = ['tipo', 'color', 'talla', 'costo']; //Declaramos las columnas que el usuario vaya a modificar
 }

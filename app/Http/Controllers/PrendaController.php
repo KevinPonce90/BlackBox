@@ -38,12 +38,21 @@ class PrendaController extends Controller
             'costo' => 'required|integer|max:9',
         ]);
 
-        $prenda = new Prenda();
-        $prenda->tipo = $request->tipo;
-        $prenda->color = $request->color;
-        $prenda->talla = $request->talla;
-        $prenda->costo = $request->costo;
-        $prenda->save();
+        //$prenda = new Prenda();
+        //$prenda->tipo = $request->tipo;
+        //$prenda->color = $request->color;
+        //$prenda->talla = $request->talla;
+        //$prenda->costo = $request->costo;
+        //$prenda->save();
+
+        //Prenda::create([
+        //    'tipo' => $request->tipo,
+        //    'color' => $request->color,
+        //    'talla' => $request->talla,
+        //    'costo' => $request->costo,
+        //]);
+
+        Prenda::create($request->all()); //Ingresa los datos a las columnas que esten definidas en los FILLABLE
 
         return redirect()->route('prenda.index');
 
@@ -78,13 +87,15 @@ class PrendaController extends Controller
             'costo' => 'required|integer|max:9',
         ]);
 
-        $prenda->tipo = $request->tipo;
-        $prenda->color = $request->color;
-        $prenda->talla = $request->talla;
-        $prenda->costo = $request->costo;
-        $prenda->save();
+        Prenda::where('id', $prenda->id)->update($request->except('_token','_method'));//si ponemos except ponemos las columnas que evitamos que edite y si ponemos el only es poner las columnas que queremos editar  
 
-        return redirect()->route('prenda.show',$prenda->id);
+        //$prenda->tipo = $request->tipo;
+        //$prenda->color = $request->color;
+        //$prenda->talla = $request->talla;
+        //$prenda->costo = $request->costo;
+        //$prenda->save();
+
+        return redirect()->route('prenda.index');
     }
 
     /**

@@ -23,8 +23,10 @@ Route::get('/', function () {
 //Route::post('ingresa', [PrendaController::class, 'store']);
 //Route::get('/prenda-individual/{id?}', [PrendaController::class, 'show']);
 
-Route::resource('prenda', PrendaController::class);
+Route::resource('prenda', PrendaController::class)->middleware('auth');//El Middleware sirve para que estes si o si iniciado sesion para que te deje entrar a la ruta en la que quieras hacer
+
 //Route::resource('prenda', PrendaController::class)->except(['destroy', 'index']); Crea una ruta para cada metodo y el except las evita  
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
