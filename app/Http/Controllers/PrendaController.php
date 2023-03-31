@@ -34,8 +34,8 @@ class PrendaController extends Controller
         $request->validate([
             'tipo' => 'required|min:5|max:255',
             'color' => 'required|min:4|max:255',
-            'talla' => 'required|integer|max:9',
-            'costo' => 'required|integer|max:9',
+            'talla' => 'required|integer|max:100',
+            'costo' => 'required|integer|max:1000',
         ]);
 
         //$prenda = new Prenda();
@@ -83,8 +83,8 @@ class PrendaController extends Controller
         $request->validate([
             'tipo' => 'required|min:5|max:255',
             'color' => 'required|min:4|max:255',
-            'talla' => 'required|integer|max:9',
-            'costo' => 'required|integer|max:9',
+            'talla' => 'required|integer|max:100',
+            'costo' => 'required|integer|max:1000',
         ]);
 
         Prenda::where('id', $prenda->id)->update($request->except('_token','_method'));//si ponemos except ponemos las columnas que evitamos que edite y si ponemos el only es poner las columnas que queremos editar  
