@@ -38,20 +38,6 @@ class PrendaController extends Controller
             'costo' => 'required|integer|max:1000',
         ]);
 
-        //$prenda = new Prenda();
-        //$prenda->tipo = $request->tipo;
-        //$prenda->color = $request->color;
-        //$prenda->talla = $request->talla;
-        //$prenda->costo = $request->costo;
-        //$prenda->save();
-
-        //Prenda::create([
-        //    'tipo' => $request->tipo,
-        //    'color' => $request->color,
-        //    'talla' => $request->talla,
-        //    'costo' => $request->costo,
-        //]);
-
         Prenda::create($request->all()); //Ingresa los datos a las columnas que esten definidas en los FILLABLE
 
         return redirect()->route('prenda.index');

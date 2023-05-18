@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PrendaController;
+use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ Route::get('/', function () {
 //Route::get('/prenda-individual/{id?}', [PrendaController::class, 'show']);
 
 Route::resource('prenda', PrendaController::class)->middleware('auth');//El Middleware sirve para que estes si o si iniciado sesion para que te deje entrar a la ruta en la que quieras hacer
+
+Route::resource('material', MaterialController::class)->middleware('auth');
 
 //Route::resource('prenda', PrendaController::class)->except(['destroy', 'index']); Crea una ruta para cada metodo y el except las evita  
 
