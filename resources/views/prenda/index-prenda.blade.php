@@ -11,7 +11,7 @@
 
 <body>
     <x-layout />
-    <x-lista :prenda="$prendas">
+    <div class="container">
         <div class="row">
             <div class="col-lg d-flex align-items-stretch">
                 <div class="card w-100">
@@ -76,4 +76,13 @@
                 </div>
             </div>
         </div>
-    </x-lista>
+    </div>
+
+</body>
+<script src="{{ asset('/js_plantilla/sidebarmenu.js') }}"></script>
+<script src="{{ asset('/js_plantilla/app.min.js') }}"></script>
+<script src="{{ asset('/js_plantilla/dashboard.js') }}"></script>
+<script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+<script src="{{ asset('/libs/simplebar/dist/simplebar.js') }}"></script>
