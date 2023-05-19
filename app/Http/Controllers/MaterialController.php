@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Material;
+use App\Models\Provedor;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -21,7 +22,8 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        return view('material.create-material');
+        $provedores = Provedor::all();
+        return view('material.create-material', compact('provedores'));
         //
     }
 
@@ -38,6 +40,8 @@ class MaterialController extends Controller
         ]);
 
         Material::create($request->all());
+
+        dd($request->all());
 
         return redirect()->route('material.index');
 

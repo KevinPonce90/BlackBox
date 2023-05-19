@@ -11,7 +11,14 @@ class Material extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['costo', 'cantidadMaterial', 'tipoMaterial'];
+    public $timestamps = false;
+
+    protected $fillable = ['costo', 'cantidadMaterial', 'tipoMaterial', 'provedor_id'];
+
+    public function provedor()
+    {
+        return $this->belongsTo(Provedor::class);
+    }
 
     public function prendas()
     {

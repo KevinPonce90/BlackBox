@@ -32,6 +32,9 @@
                                             <h6 class="fw-semibold mb-0">Precio por Unidad</h6>
                                         </th>
                                         <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Provedor</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Acciones</h6>
                                         </th>
                                     </tr>
@@ -50,6 +53,9 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <span class="badge bg-primary rounded-3 fw-semibold">{{ $m->costo }}</span>
                                             </div>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">{{ $m->provedor->nombreP }}</h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0 fs-4"><a href="#editEmployeeModal{{$m->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>

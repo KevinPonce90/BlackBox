@@ -38,7 +38,7 @@
                                     <tr>
                                         <td class="border-bottom-0">
 
-                                            <h6 class="fw-semibold mb-0">{{ $p->nombre }}</h6>
+                                            <h6 class="fw-semibold mb-0">{{ $p->nombreP }}</h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">{{ $p->telefono }}</h6>
@@ -50,7 +50,7 @@
                                                     @method('DELETE')
                                                     <button type="submit"> Eliminar</button>
                                                 </form>
-                                                <a href="{{ route('provedor.edit', $p) }}">VER</a>
+                                                <a href="{{ route('provedor.show', $p) }}">VER</a>
                                             </h6>
                                         </td>
                                     </tr>

@@ -16,8 +16,9 @@
             <div class="card">
                 <h5>Editar Empleado</h5>
                 <div class="card-body">
-                    <form action="{{ route('empleado.store', $empleado) }}" method="POST">
+                    <form action="{{ route('empleado.update', $empleado) }}" method="POST">
                         @csrf
+                        @method('patch')
                         <div class="container text-center">
                             <div class="row align-items-center">
                                 <div class="col">

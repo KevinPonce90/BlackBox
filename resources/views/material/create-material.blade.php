@@ -41,6 +41,14 @@
                                     <h4>{{ $message }}</h4>
                                     @enderror
                                 </div>
+                                <div class="col">
+                                    <label for="provedores" class="form-label">Proveedores</label>
+                                    <select name="provedor_id" class="form-select" aria-label="Default select example">
+                                        @foreach ($provedores as $provedor)
+                                        <option value="{{$provedor->id}}">{{$provedor->nombreP}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
 

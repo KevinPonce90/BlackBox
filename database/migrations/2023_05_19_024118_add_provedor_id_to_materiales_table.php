@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prendas', function (Blueprint $table) {
-            $table->id();
-            $table->string('tipo');
-            $table->string('color');
-            $table->string('talla');
-            $table->integer('costo');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('materials', function (Blueprint $table) {
+            $table->foreignId('provedor_id')->constrained();
         });
     }
 
@@ -27,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prendas');
+        Schema::table('materials', function (Blueprint $table) {
+            $table->dropForeign(['provedor_id']);
+        });
     }
 };
