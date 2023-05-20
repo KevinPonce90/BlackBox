@@ -58,13 +58,15 @@
                                             <h6 class="fw-semibold mb-0">{{ $m->provedor->nombreP }}</h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"><a href="#editEmployeeModal{{$m->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <h6 class="fw-semibold mb-0 fs-4"><a href="{{ route('material.show', $m) }}">Ver</a></h6>
+                                            <h6 class="fw-semibold mb-0 fs-4"><a href="{{ route('material.edit', $m) }}">Editar</a></h6>
+                                            <h6 class="fw-semibold mb-0 fs-4">
                                                 <form action="{{ route('material.destroy', $m) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"> Eliminar</button>
                                                 </form>
-                                                <a href="{{ route('material.edit', $m) }}">VER</a>
+
                                             </h6>
                                         </td>
                                     </tr>

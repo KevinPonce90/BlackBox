@@ -21,13 +21,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function () {
+    return view('inicio');
+});
 //Route::get('prenda', [PrendaController::class, 'index']);
 //Route::get('ingresa', [PrendaController::class, 'create']);
 //Route::post('ingresa', [PrendaController::class, 'store']);
 //Route::get('/prenda-individual/{id?}', [PrendaController::class, 'show']);
 
+
 Route::resource('prenda', PrendaController::class)->middleware('auth');//El Middleware sirve para que estes si o si iniciado sesion para que te deje entrar a la ruta en la que quieras hacer
 
+Route::post('material/{material}/agrega-prenda/', [MaterialController::class, 'agregaPrenda'])->name('material.agrega-prenda')->middleware('auth');
 Route::resource('material', MaterialController::class)->middleware('auth');
 
 Route::resource('empleado', EmpleadoController::class)->middleware('auth');

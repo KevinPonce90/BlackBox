@@ -13,7 +13,12 @@ class Prenda extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['tipo', 'color', 'talla', 'costo']; //Declaramos las columnas que el usuario vaya a modificar
+    protected $fillable = ['tipo', 'color', 'talla', 'costo', 'empleado_id']; //Declaramos las columnas que el usuario vaya a modificar
+
+    public function empleado()
+    {
+        return $this->belongsTo(Empleado::class);
+    }
 
     public function materiales()
     {

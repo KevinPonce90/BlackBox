@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prenda;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
 
 class PrendaController extends Controller
@@ -22,7 +23,8 @@ class PrendaController extends Controller
     public function create()
     {
         //
-        return view('prenda.create-prenda',);
+        $empleado = Empleado::all();
+        return view('prenda.create-prenda', compact('empleado'));
     }
 
     /**

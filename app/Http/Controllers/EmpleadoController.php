@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empleado;
+use App\Models\Prenda;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -40,7 +41,10 @@ class EmpleadoController extends Controller
             'telefono' => 'required|integer|max:9999999999'
         ]);
 
+        dd($request);
         Empleado::create($request->all()); //Ingresa los datos a las columnas que esten definidas en los FILLABLE
+
+        
 
         return redirect()->route('empleado.index');
     }
@@ -51,7 +55,8 @@ class EmpleadoController extends Controller
     public function show(Empleado $empleado)
     {
         //
-        return view('empleado.show-empleado', compact('empleado'));
+        $prendas = Prenda::where('empleado_id', $empleado->id)->get();
+        return view('empleado.show-empleado', compact('empleado', 'prendas'));
 
     }
 

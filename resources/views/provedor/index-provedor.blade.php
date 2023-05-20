@@ -44,13 +44,17 @@
                                             <h6 class="fw-semibold mb-0">{{ $p->telefono }}</h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"><a href="#editEmployeeModal{{$p->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <h6 class="fw-semibold mb-0 fs-4">
+                                                <a href="{{ route('provedor.show', $p) }}">Ver</a>
+                                            </h6>
+                                            <h6 class="fw-semibold mb-0 fs-4"><a href="{{ route('provedor.edit', $p) }}">Editar</a></h6>
+                                            <h6 class="fw-semibold mb-0 fs-4">
                                                 <form action="{{ route('provedor.destroy', $p) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"> Eliminar</button>
                                                 </form>
-                                                <a href="{{ route('provedor.show', $p) }}">VER</a>
+
                                             </h6>
                                         </td>
                                     </tr>

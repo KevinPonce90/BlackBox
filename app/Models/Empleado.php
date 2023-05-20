@@ -15,5 +15,8 @@ class Empleado extends Model
 
     protected $fillable = ['nombre', 'apellidoP', 'apellidoM', 'salario', 'rfc', 'telefono']; //Declaramos las columnas que el usuario vaya a modificar
 
-    
+    public function prendas()
+    {
+        return $this->hasMany(Prenda::class);
+    }
 }

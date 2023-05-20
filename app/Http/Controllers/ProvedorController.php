@@ -52,7 +52,6 @@ class ProvedorController extends Controller
     public function show(Provedor $provedor)
     {
         //
-        #Codigo para mostrar los materiales de un provedor
         $materiales = Material::where('provedor_id', $provedor->id)->get();
                 
         return view('provedor.show-provedor', compact('provedor', 'materiales'));

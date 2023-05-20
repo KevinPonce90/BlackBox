@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Material;
 use App\Models\Provedor;
+use App\Models\Prenda;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -41,11 +42,8 @@ class MaterialController extends Controller
 
         Material::create($request->all());
 
-        dd($request->all());
-
         return redirect()->route('material.index');
 
-        //
     }
 
     /**
@@ -54,7 +52,8 @@ class MaterialController extends Controller
 
     public function show(Material $material)
     {
-        return view('material.show-material', compact('material'));
+        $prendas = Prenda::all();
+        return view('material.show-material', compact('material', 'prendas'));
         //
     }
 
@@ -96,4 +95,11 @@ class MaterialController extends Controller
         return redirect()->route('material.index');
         //
     }
+
+    public function agregaPrenda(Request $request, Material $material)
+    {
+        $material->prendas()->attach($request->prenda_id);
+        return redirect()->route('material.show', $material);
+    }
+
 }

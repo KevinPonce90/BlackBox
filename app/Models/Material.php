@@ -25,4 +25,3 @@ class Material extends Model
         return $this->belongsToMany(Prenda::class);
     }
 }
- 

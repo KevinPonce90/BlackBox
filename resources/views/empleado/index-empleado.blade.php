@@ -44,13 +44,14 @@
                                             <h6 class="fw-semibold mb-0">{{ $e->telefono }}</h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"><a href="#editEmployeeModal{{$e->id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <h6 class="fw-semibold mb-0 fs-4"><a href="{{ route('empleado.show', $e) }}">VER</a></h6>
+                                            <h6 class="fw-semibold mb-0 fs-4"><a href="{{ route('empleado.edit', $e) }}">Editar</a></h6>
+                                            <h6 class="fw-semibold mb-0 fs-4">
                                                 <form action="{{ route('empleado.destroy', $e) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"> Eliminar</button>
                                                 </form>
-                                                <a href="{{ route('empleado.edit', $e) }}">VER</a>
                                             </h6>
                                         </td>
                                     </tr>
